@@ -7,8 +7,13 @@ Rails.application.routes.draw do
   # post 'subs#create'
   
   # resources
-  resources :subs 
-
+  resources :subs do
+    resources :topics
+  end
+  
+  resources :topics do
+    resources :comments
+  end  
   # to access it would be localhost:3000/rails/info/routes
 
 
